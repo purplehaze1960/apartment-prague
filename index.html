@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apartment Rentals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f3f3f3 url('6.png') no-repeat top center;
+      background-size: cover;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .lang-switch {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .lang-switch button {
+      margin: 0 5px;
+      padding: 5px 10px;
+    }
+    .apartment {
+      margin-bottom: 30px;
+    }
+    .apartment img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .phone {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-switch">
+      <button onclick="setLang('en')">English</button>
+      <button onclick="setLang('cz')">Čeština</button>
+      <button onclick="setLang('ru')">Русский</button>
+    </div>
+
+    <h1 id="title">Apartment Rentals</h1>
+
+    <div class="apartment">
+      <img src="3.png" alt="One Room Apartment">
+      <p id="one-room">1-room apartment — 15 000 CZK/month</p>
+    </div>
+
+    <div class="apartment">
+      <img src="5.png" alt="Two Room Apartment">
+      <p id="two-room">2-room apartment — 22 000 CZK/month</p>
+    </div>
+
+    <p class="phone" id="contact">Contact: +420 123 456 789</p>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Apartment Rentals",
+        one: "1-room apartment — 15 000 CZK/month",
+        two: "2-room apartment — 22 000 CZK/month",
+        contact: "Contact: +420 123 456 789"
+      },
+      cz: {
+        title: "Pronájem bytů",
+        one: "1-pokojový byt — 15 000 Kč/měsíc",
+        two: "2-pokojový byt — 22 000 Kč/měsíc",
+        contact: "Kontakt: +420 123 456 789"
+      },
+      ru: {
+        title: "Аренда квартир",
+        one: "1-комнатная квартира — 15 000 CZK/месяц",
+        two: "2-комнатная квартира — 22 000 CZK/месяц",
+        contact: "Контакт: +420 123 456 789"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("title").innerText = translations[lang].title;
+      document.getElementById("one-room").innerText = translations[lang].one;
+      document.getElementById("two-room").innerText = translations[lang].two;
+      document.getElementById("contact").innerText = translations[lang].contact;
+    }
+  </script>
+</body>
+</html>
